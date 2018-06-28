@@ -1,0 +1,25 @@
+0 silly input [ '@mielinna/core' ]
+1 silly flags { _: [ 'add' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   dev: false,
+1 silly flags   D: false,
+1 silly flags   scope: 'reference-implementation',
+1 silly flags   args: [ '@mielinna/core' ] }
+2 verbose rootPath /home/edu/Code/pp/mielina
+3 info version 2.11.0
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /home/edu/Code/pp/mielina/VERSION
+7 info scope reference-implementation
+8 error EPACKAGES Errored while collecting packages and package graph
+9 error Error: No packages found that match scope 'reference-implementation'
+9 error     at Function.filterPackages (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/PackageUtilities.js:252:17)
+9 error     at AddCommand.runPreparations (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:333:60)
+9 error     at /home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:209:18
+9 error     at new Promise (<anonymous>)
+9 error     at AddCommand.run (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:193:14)
+9 error     at Object.handler (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/commands/AddCommand.js:79:14)
+9 error     at Object.self.runCommand (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
+9 error     at Object.Yargs.self._parseArgs (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
+9 error     at Object.Yargs.self.parse (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)

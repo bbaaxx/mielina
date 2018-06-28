@@ -1,5 +1,5 @@
 Mielina: A nervous system for your bot.
-===============================================
+=======================================
 
 ## What is this?
 Mielina can be described as either a framework or a foundation to build your

@@ -1,0 +1,22 @@
+{
+  "name": "@mielina/core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mielina/base-servers": "^1.0.0",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "nodemon": "^1.17.4"
+  }
+}
