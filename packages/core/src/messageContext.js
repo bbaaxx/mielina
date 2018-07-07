@@ -1,14 +1,14 @@
-module.exports = (services) => input => {
+module.exports = servers => input => {
   const { message } = input;
-  const { ws, wss, db } = services;
+  const { web, sockets, database } = servers;
   const ctxMap = new Map(); // eslint-disable-line
 
   ctxMap.set('resolved', false);
   ctxMap.set('startedAt', new Date());
   ctxMap.set('message', message);
-  ctxMap.set('ws', ws);
-  ctxMap.set('wss', wss);
-  ctxMap.set('db', db);
+  ctxMap.set('ws', web);
+  ctxMap.set('wss', sockets);
+  ctxMap.set('db', database);
   ctxMap.set('reaction', void 0);
 
   return {

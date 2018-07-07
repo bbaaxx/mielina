@@ -1,7 +1,11 @@
-const Loop = require('@mielina/core')
+require('dotenv').config();
+
+const runLoop = require('@mielina/core');
+const getConsoleAdapter = require('@mielina/adapter-console');
+const getServers = require('@mielina/base-servers');
 
 /**
- *
+ * ### Configuration object ###
  * {
  *   servers: {
  *     web: [[ExpressJs Running Server Instance]],
@@ -11,8 +15,16 @@ const Loop = require('@mielina/core')
  *   adapters: [
  *     [[Messaging Platform Adapters]]
  *   ],
- *   skills: 
+ *   skills: [ [[SkillObject]] ]
  * }
  */
 
-console.log(Loop);
+const consoleAdapter = getConsoleAdapter();
+
+const getConfig = servers => ({
+  servers,
+  adapters: [consoleAdapter],
+  skills: {}
+});
+
+getServers().then(servers => runLoop(getConfig(servers)));

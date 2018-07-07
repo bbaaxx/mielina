@@ -1,0 +1,37 @@
+[
+  [
+    "ping",
+    "pong"
+  ],
+  [
+    "!ping",
+    "pong!"
+  ],
+  [
+    "amo el lol",
+    "Que bueno, no importa ser manco, el amor al lol es lo que importa"
+  ],
+  [
+    "odio a teemo",
+    ["Si, maldito tejón", "Bienvenido al club de mata ratas", "Es cási tan trolo como el Champi"]
+  ],
+  [
+    "maldito teemo",
+    ["Es una ratita asquerosa", "Mi hamster se salió de su jaulita otra vez?"]
+  ],
+  [
+    "global.howDoYouDo",
+    [
+      "A mi muy bien, gracias",
+      "Pues ando de ñoña como Swain.",
+      "Espera que me matan bajo torre !",
+      "Bien, hoy nos sentimos traviesos ... eh!",
+      "Pfft voy 1/10/1, que mas puede salir mal?",
+      "Estoy un poco desvelada, he estado jugando LoL hasta tarde",
+      "Bien, pero estaria mejor si el JG gankeara",
+      "Aquí troleando en low ELO",
+      "Pues para existir en un monton de silicon, puedo decir que me va bastante bien",
+      "Vndo tclado casi nuvo a bun prcio solamnt falla una tcla"
+    ]
+  ]
+]

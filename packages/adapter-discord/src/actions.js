@@ -1,13 +1,13 @@
-import { marshallMessage } from './messageHelpers';
+const { marshallMessage } = require('./helpers');
 
-export const publishMessage = ({ message }) => ({
+module.exports.publishMessage = ({ message }) => ({
   type: 'incoming-message',
   message: marshallMessage(message),
 });
 
-export const platformMessage = message => ({
+module.exports.platformMessage = message => ({
   type: 'platform-message',
   message,
 });
 
-export const adapterReady = () => ({ type: 'adapter-ready' });
+module.exports.adapterReady = () => ({ type: 'adapter-ready' });

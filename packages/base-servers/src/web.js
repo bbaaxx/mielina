@@ -7,13 +7,11 @@ const getApp = ({ PORT, NODE_ENV }) =>
   new Promise((resolve, reject) => {
     try {
       const app = express();
-      if (NODE_ENV === 'development') app.use(morgan('tiny'));
-
+      if (NODE,_ENV === 'development') app.use(morgan('tiny'));
       app.use(bodyParser.json());
       app.use(bodyParser.urlencoded({ extended: true }));
       // ...
       app.get('/*', express.static('static'));
-
       resolve(app);
     } catch (err) {
       reject(err);

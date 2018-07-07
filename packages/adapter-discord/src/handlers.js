@@ -55,6 +55,6 @@ const getAction = actionType =>
     ? platformActions[actionType]
     : platformActions['default-action'];
 
-module.export = client => action => {
+module.exports = client => action => {
   getAction(action.type)(client, action);
 };

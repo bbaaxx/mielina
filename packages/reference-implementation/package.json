@@ -12,6 +12,9 @@
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
-    "@mielina/core": "^1.0.0"
+    "@mielina/adapter-console": "^1.0.0",
+    "@mielina/base-servers": "^1.0.0",
+    "@mielina/core": "^1.0.0",
+    "dotenv-safe": "^6.0.0"
   }
 }
