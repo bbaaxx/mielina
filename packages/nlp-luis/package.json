@@ -1,0 +1,16 @@
+{
+  "name": "@mielina/nlp-luis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}

@@ -1,4 +1,4 @@
-const { checkForStaticReply, getStaticReply } = require('./staticReplies');
+const { checkForStaticReply, getStaticReply } = require("./staticReplies");
 
 module.exports = function(ctx) {
   if (ctx.resolved()) return ctx;
@@ -10,4 +10,4 @@ module.exports = function(ctx) {
   if (checkForStaticReply(content)) ctx.resolve(getStaticReply(content));
 
   return { ...ctx, handled: iHaveAnImpulseReply, reaction };
-}
+};

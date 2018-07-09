@@ -1,8 +1,9 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const runLoop = require('@mielina/core');
-const getConsoleAdapter = require('@mielina/adapter-console');
-const getServers = require('@mielina/base-servers');
+const runLoop = require("@mielina/core");
+const getConsoleAdapter = require("@mielina/adapter-console");
+const getServers = require("@mielina/base-servers");
+const nlpProvider = require("@mielina/nlp-dialogflow");
 
 /**
  * ### Configuration object ###
@@ -24,7 +25,8 @@ const consoleAdapter = getConsoleAdapter();
 const getConfig = servers => ({
   servers,
   adapters: [consoleAdapter],
-  skills: {}
+  skills: {},
+  nlpProvider
 });
 
 getServers().then(servers => runLoop(getConfig(servers)));

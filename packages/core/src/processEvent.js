@@ -1,20 +1,20 @@
-const askTheIa = require('../ia/nlp');
-const handleWithASkill = require('./skills');
+const askTheIa = require("../ia/nlp");
+const handleWithASkill = require("./skills");
 
-const botNameRegExp = new RegExp(process.env.BOT_NAME_REGEXP || 'bot', 'i');
+const botNameRegExp = new RegExp(process.env.BOT_NAME_REGEXP || "bot", "i");
 
 module.exports = async function(ctx) {
   if (ctx.resolved()) return ctx;
   const { message, conversation } = ctx;
   const { authorId, content } = message;
 
-  const fallbackAction = { type: 'ignore' };
+  const fallbackAction = { type: "ignore" };
   const getErrorAction = error => {
-    type: 'system-error', error;
+    type: "system-error", error;
   };
 
   const theConversationIsActive = Boolean(
-    conversation && conversation.isActive,
+    conversation && conversation.isActive
   );
   const iWasMentioned = botNameRegExp.test(String(content).toLowerCase());
 
@@ -26,4 +26,4 @@ module.exports = async function(ctx) {
       : fallbackAction;
 
   return { ...ctx, reaction };
-}
+};

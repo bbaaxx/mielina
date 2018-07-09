@@ -9,5 +9,5 @@ module.exports.marshallMessage = message => ({
   authorId: message.author.id,
   authorName: message.author.username,
   channel: message.channel.id,
-  attachments: message.attachments,
+  attachments: message.attachments
 });

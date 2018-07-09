@@ -1,6 +1,6 @@
-const getWebServer = require('./web');
-const getSocketsServer = require('./sockets');
-const getDatabaseConnection = require('./database');
+const getWebServer = require("./web");
+const getSocketsServer = require("./sockets");
+const getDatabaseConnection = require("./database");
 
 module.exports = async () => {
   const webServer = await getWebServer(process.env);

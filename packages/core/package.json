@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mielina/memory-short-term": "^1.0.0",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1"
   },
