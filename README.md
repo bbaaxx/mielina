@@ -32,8 +32,8 @@ be abstracted into concepts more relatable to our everyday communications
 experience. This is how bot-annah was born.
 
 ### Bot-annah
-Mielina is a fork of an older experiment called Bot-annah. As of right
-now bot-annah is fully operational, under maintenance and it is open source.
+Mielina is an evolution of an [older experiment](https://github.com/bbaaxx/bot-annah) 
+called Bot-annah. She is fully operational, under light maintenance and open source.
 
 ## License
 MIT
