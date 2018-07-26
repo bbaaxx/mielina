@@ -1,25 +1,647 @@
-0 silly input [ '@mielinna/core' ]
-1 silly flags { _: [ 'add' ],
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   dev: false,
-1 silly flags   D: false,
-1 silly flags   scope: 'reference-implementation',
-1 silly flags   args: [ '@mielinna/core' ] }
+1 silly flags   args: [] }
 2 verbose rootPath /home/edu/Code/pp/mielina
 3 info version 2.11.0
-4 silly isInitialized
-5 silly isInitialized true
-6 silly existsSync /home/edu/Code/pp/mielina/VERSION
-7 info scope reference-implementation
-8 error EPACKAGES Errored while collecting packages and package graph
-9 error Error: No packages found that match scope 'reference-implementation'
-9 error     at Function.filterPackages (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/PackageUtilities.js:252:17)
-9 error     at AddCommand.runPreparations (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:333:60)
-9 error     at /home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:209:18
-9 error     at new Promise (<anonymous>)
-9 error     at AddCommand.run (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/Command.js:193:14)
-9 error     at Object.handler (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/lib/commands/AddCommand.js:79:14)
-9 error     at Object.self.runCommand (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
-9 error     at Object.Yargs.self._parseArgs (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
-9 error     at Object.Yargs.self.parse (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)
+4 silly existsSync /home/edu/Code/pp/mielina/VERSION
+5 silly initialize attempt
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: undefined,
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: undefined }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 9 packages
+10 info lifecycle preinstall
+11 silly runScript preinstall @mielina/adapter-discord
+12 silly @mielina/adapter-discord
+13 silly runScript preinstall @mielina/base-servers
+14 silly @mielina/base-servers
+15 silly runScript preinstall @mielina/memory-short-term
+16 silly @mielina/memory-short-term
+17 silly runScript preinstall @mielina/nlp-apiai
+18 silly @mielina/nlp-apiai
+19 silly runScript preinstall @mielina/nlp-dialogflow
+20 silly @mielina/nlp-dialogflow
+21 silly runScript preinstall @mielina/nlp-luis
+22 silly @mielina/nlp-luis
+23 silly runScript preinstall @mielina/adapter-console
+24 silly @mielina/adapter-console
+25 silly runScript preinstall @mielina/core
+26 silly @mielina/core
+27 silly runScript preinstall @mielina/reference-implementation
+28 silly @mielina/reference-implementation
+29 silly hasMatchingDependency @mielina/adapter-console @mielina/base-servers
+30 silly hasMatchingDependency @mielina/core @mielina/memory-short-term
+31 silly hasMatchingDependency @mielina/reference-implementation @mielina/adapter-console
+32 silly hasMatchingDependency @mielina/reference-implementation @mielina/base-servers
+33 silly hasMatchingDependency @mielina/reference-implementation @mielina/core
+34 silly hasMatchingDependency @mielina/reference-implementation @mielina/nlp-apiai
+35 silly hasDependencyInstalled @mielina/adapter-console @babel/cli
+36 silly dependencyIsSatisfied [ '@babel/cli',
+36 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+36 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+37 verbose dependencyIsSatisfied @babel/cli false
+38 silly hasDependencyInstalled @mielina/adapter-discord @babel/cli
+39 silly dependencyIsSatisfied [ '@babel/cli',
+39 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+39 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+40 verbose dependencyIsSatisfied @babel/cli false
+41 silly hasDependencyInstalled @mielina/base-servers @babel/cli
+42 silly dependencyIsSatisfied [ '@babel/cli',
+42 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+42 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+43 verbose dependencyIsSatisfied @babel/cli false
+44 silly hasDependencyInstalled @mielina/core @babel/cli
+45 silly dependencyIsSatisfied [ '@babel/cli',
+45 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+45 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+46 verbose dependencyIsSatisfied @babel/cli false
+47 silly hasDependencyInstalled @mielina/reference-implementation @babel/cli
+48 silly dependencyIsSatisfied [ '@babel/cli',
+48 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+48 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/reference-implementation/node_modules' ]
+49 verbose dependencyIsSatisfied @babel/cli false
+50 silly hasDependencyInstalled @mielina/adapter-console @babel/core
+51 silly dependencyIsSatisfied [ '@babel/core',
+51 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+51 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+52 verbose dependencyIsSatisfied @babel/core false
+53 silly hasDependencyInstalled @mielina/adapter-discord @babel/core
+54 silly dependencyIsSatisfied [ '@babel/core',
+54 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+54 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+55 verbose dependencyIsSatisfied @babel/core false
+56 silly hasDependencyInstalled @mielina/base-servers @babel/core
+57 silly dependencyIsSatisfied [ '@babel/core',
+57 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+57 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+58 verbose dependencyIsSatisfied @babel/core false
+59 silly hasDependencyInstalled @mielina/core @babel/core
+60 silly dependencyIsSatisfied [ '@babel/core',
+60 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+60 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+61 verbose dependencyIsSatisfied @babel/core false
+62 silly hasDependencyInstalled @mielina/reference-implementation @babel/core
+63 silly dependencyIsSatisfied [ '@babel/core',
+63 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+63 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/reference-implementation/node_modules' ]
+64 verbose dependencyIsSatisfied @babel/core false
+65 silly hasDependencyInstalled @mielina/adapter-console @babel/preset-env
+66 silly dependencyIsSatisfied [ '@babel/preset-env',
+66 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+66 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+67 verbose dependencyIsSatisfied @babel/preset-env false
+68 silly hasDependencyInstalled @mielina/adapter-discord @babel/preset-env
+69 silly dependencyIsSatisfied [ '@babel/preset-env',
+69 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+69 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+70 verbose dependencyIsSatisfied @babel/preset-env false
+71 silly hasDependencyInstalled @mielina/base-servers @babel/preset-env
+72 silly dependencyIsSatisfied [ '@babel/preset-env',
+72 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+72 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+73 verbose dependencyIsSatisfied @babel/preset-env false
+74 silly hasDependencyInstalled @mielina/core @babel/preset-env
+75 silly dependencyIsSatisfied [ '@babel/preset-env',
+75 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+75 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+76 verbose dependencyIsSatisfied @babel/preset-env false
+77 silly hasDependencyInstalled @mielina/reference-implementation @babel/preset-env
+78 silly dependencyIsSatisfied [ '@babel/preset-env',
+78 silly dependencyIsSatisfied   '^7.0.0-beta.51',
+78 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/reference-implementation/node_modules' ]
+79 verbose dependencyIsSatisfied @babel/preset-env false
+80 silly hasDependencyInstalled @mielina/adapter-console nodemon
+81 silly dependencyIsSatisfied [ 'nodemon',
+81 silly dependencyIsSatisfied   '^1.17.4',
+81 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+82 verbose dependencyIsSatisfied nodemon false
+83 silly hasDependencyInstalled @mielina/adapter-discord nodemon
+84 silly dependencyIsSatisfied [ 'nodemon',
+84 silly dependencyIsSatisfied   '^1.17.4',
+84 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+85 verbose dependencyIsSatisfied nodemon false
+86 silly hasDependencyInstalled @mielina/base-servers nodemon
+87 silly dependencyIsSatisfied [ 'nodemon',
+87 silly dependencyIsSatisfied   '^1.17.4',
+87 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+88 verbose dependencyIsSatisfied nodemon false
+89 silly hasDependencyInstalled @mielina/core nodemon
+90 silly dependencyIsSatisfied [ 'nodemon',
+90 silly dependencyIsSatisfied   '^1.17.4',
+90 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+91 verbose dependencyIsSatisfied nodemon false
+92 silly hasDependencyInstalled @mielina/adapter-console discord.js
+93 silly dependencyIsSatisfied [ 'discord.js',
+93 silly dependencyIsSatisfied   '^11.3.2',
+93 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+94 verbose dependencyIsSatisfied discord.js false
+95 silly hasDependencyInstalled @mielina/adapter-discord discord.js
+96 silly dependencyIsSatisfied [ 'discord.js',
+96 silly dependencyIsSatisfied   '^11.3.2',
+96 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+97 verbose dependencyIsSatisfied discord.js false
+98 silly hasDependencyInstalled @mielina/adapter-console rxjs
+99 silly dependencyIsSatisfied [ 'rxjs',
+99 silly dependencyIsSatisfied   '^6.2.1',
+99 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+100 verbose dependencyIsSatisfied rxjs false
+101 silly hasDependencyInstalled @mielina/adapter-discord rxjs
+102 silly dependencyIsSatisfied [ 'rxjs',
+102 silly dependencyIsSatisfied   '^6.2.1',
+102 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+103 verbose dependencyIsSatisfied rxjs false
+104 silly hasDependencyInstalled @mielina/core rxjs
+105 silly dependencyIsSatisfied [ 'rxjs',
+105 silly dependencyIsSatisfied   '^6.2.1',
+105 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+106 verbose dependencyIsSatisfied rxjs false
+107 silly hasDependencyInstalled @mielina/adapter-console rxjs-compat
+108 silly dependencyIsSatisfied [ 'rxjs-compat',
+108 silly dependencyIsSatisfied   '^6.2.1',
+108 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+109 verbose dependencyIsSatisfied rxjs-compat false
+110 silly hasDependencyInstalled @mielina/adapter-discord rxjs-compat
+111 silly dependencyIsSatisfied [ 'rxjs-compat',
+111 silly dependencyIsSatisfied   '^6.2.1',
+111 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-discord/node_modules' ]
+112 verbose dependencyIsSatisfied rxjs-compat false
+113 silly hasDependencyInstalled @mielina/core rxjs-compat
+114 silly dependencyIsSatisfied [ 'rxjs-compat',
+114 silly dependencyIsSatisfied   '^6.2.1',
+114 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/core/node_modules' ]
+115 verbose dependencyIsSatisfied rxjs-compat false
+116 silly hasDependencyInstalled @mielina/adapter-console uniquid
+117 silly dependencyIsSatisfied [ 'uniquid',
+117 silly dependencyIsSatisfied   '^1.1.4',
+117 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/adapter-console/node_modules' ]
+118 verbose dependencyIsSatisfied uniquid false
+119 silly hasDependencyInstalled @mielina/base-servers body-parser
+120 silly dependencyIsSatisfied [ 'body-parser',
+120 silly dependencyIsSatisfied   '^1.18.2',
+120 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+121 verbose dependencyIsSatisfied body-parser false
+122 silly hasDependencyInstalled @mielina/base-servers express
+123 silly dependencyIsSatisfied [ 'express',
+123 silly dependencyIsSatisfied   '^4.16.3',
+123 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+124 verbose dependencyIsSatisfied express false
+125 silly hasDependencyInstalled @mielina/base-servers mongoose
+126 silly dependencyIsSatisfied [ 'mongoose',
+126 silly dependencyIsSatisfied   '^5.1.0',
+126 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+127 verbose dependencyIsSatisfied mongoose false
+128 silly hasDependencyInstalled @mielina/base-servers morgan
+129 silly dependencyIsSatisfied [ 'morgan',
+129 silly dependencyIsSatisfied   '^1.9.0',
+129 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+130 verbose dependencyIsSatisfied morgan false
+131 silly hasDependencyInstalled @mielina/base-servers socket.io
+132 silly dependencyIsSatisfied [ 'socket.io',
+132 silly dependencyIsSatisfied   '^2.1.0',
+132 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/base-servers/node_modules' ]
+133 verbose dependencyIsSatisfied socket.io false
+134 silly hasDependencyInstalled @mielina/memory-short-term node-cache
+135 silly dependencyIsSatisfied [ 'node-cache',
+135 silly dependencyIsSatisfied   '^4.2.0',
+135 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/memory-short-term/node_modules' ]
+136 verbose dependencyIsSatisfied node-cache false
+137 silly hasDependencyInstalled @mielina/nlp-apiai apiai
+138 silly dependencyIsSatisfied [ 'apiai',
+138 silly dependencyIsSatisfied   '^4.0.3',
+138 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-apiai/node_modules' ]
+139 verbose dependencyIsSatisfied apiai false
+140 silly hasDependencyInstalled @mielina/nlp-luis apiai
+141 silly dependencyIsSatisfied [ 'apiai',
+141 silly dependencyIsSatisfied   '^4.0.3',
+141 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-luis/node_modules' ]
+142 verbose dependencyIsSatisfied apiai false
+143 silly hasDependencyInstalled @mielina/nlp-apiai request
+144 silly dependencyIsSatisfied [ 'request',
+144 silly dependencyIsSatisfied   '^2.87.0',
+144 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-apiai/node_modules' ]
+145 verbose dependencyIsSatisfied request false
+146 silly hasDependencyInstalled @mielina/nlp-dialogflow request
+147 silly dependencyIsSatisfied [ 'request',
+147 silly dependencyIsSatisfied   '^2.87.0',
+147 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/node_modules' ]
+148 verbose dependencyIsSatisfied request false
+149 silly hasDependencyInstalled @mielina/nlp-luis request
+150 silly dependencyIsSatisfied [ 'request',
+150 silly dependencyIsSatisfied   '^2.87.0',
+150 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-luis/node_modules' ]
+151 verbose dependencyIsSatisfied request false
+152 silly hasDependencyInstalled @mielina/nlp-apiai request-promise-native
+153 silly dependencyIsSatisfied [ 'request-promise-native',
+153 silly dependencyIsSatisfied   '^1.0.5',
+153 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-apiai/node_modules' ]
+154 verbose dependencyIsSatisfied request-promise-native false
+155 silly hasDependencyInstalled @mielina/nlp-dialogflow request-promise-native
+156 silly dependencyIsSatisfied [ 'request-promise-native',
+156 silly dependencyIsSatisfied   '^1.0.5',
+156 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/node_modules' ]
+157 verbose dependencyIsSatisfied request-promise-native false
+158 silly hasDependencyInstalled @mielina/nlp-luis request-promise-native
+159 silly dependencyIsSatisfied [ 'request-promise-native',
+159 silly dependencyIsSatisfied   '^1.0.5',
+159 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-luis/node_modules' ]
+160 verbose dependencyIsSatisfied request-promise-native false
+161 silly hasDependencyInstalled @mielina/nlp-dialogflow dialogflow
+162 silly dependencyIsSatisfied [ 'dialogflow',
+162 silly dependencyIsSatisfied   '^0.6.0',
+162 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/node_modules' ]
+163 verbose dependencyIsSatisfied dialogflow false
+164 silly hasDependencyInstalled @mielina/reference-implementation dotenv-safe
+165 silly dependencyIsSatisfied [ 'dotenv-safe',
+165 silly dependencyIsSatisfied   '^6.0.0',
+165 silly dependencyIsSatisfied   '/home/edu/Code/pp/mielina/packages/reference-implementation/node_modules' ]
+166 verbose dependencyIsSatisfied dotenv-safe false
+167 silly root dependencies []
+168 silly leaf dependencies {
+168 silly leaf dependencies   "@mielina/adapter-console": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/cli@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/core@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/preset-env@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "nodemon@^1.17.4",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "discord.js@^11.3.2",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs-compat@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "uniquid@^1.1.4",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/adapter-discord": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/cli@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/core@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/preset-env@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "nodemon@^1.17.4",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "discord.js@^11.3.2",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs-compat@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/base-servers": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/cli@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/core@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/preset-env@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "nodemon@^1.17.4",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "body-parser@^1.18.2",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "express@^4.16.3",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "mongoose@^5.1.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "morgan@^1.9.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "socket.io@^2.1.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/core": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/cli@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/core@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/preset-env@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "nodemon@^1.17.4",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "rxjs-compat@^6.2.1",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/reference-implementation": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/cli@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/core@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "@babel/preset-env@^7.0.0-beta.51",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "dotenv-safe@^6.0.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/memory-short-term": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "node-cache@^4.2.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/nlp-apiai": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "apiai@^4.0.3",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request@^2.87.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request-promise-native@^1.0.5",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/nlp-luis": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "apiai@^4.0.3",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request@^2.87.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request-promise-native@^1.0.5",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ],
+168 silly leaf dependencies   "@mielina/nlp-dialogflow": [
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request@^2.87.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "request-promise-native@^1.0.5",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     },
+168 silly leaf dependencies     {
+168 silly leaf dependencies       "dependency": "dialogflow@^0.6.0",
+168 silly leaf dependencies       "isSatisfied": false
+168 silly leaf dependencies     }
+168 silly leaf dependencies   ]
+168 silly leaf dependencies }
+169 info Installing external dependencies
+170 verbose actions 9 actions, concurrency 4
+171 silly installInDir adapter-console [ '@babel/cli@^7.0.0-beta.51',
+171 silly installInDir   '@babel/core@^7.0.0-beta.51',
+171 silly installInDir   '@babel/preset-env@^7.0.0-beta.51',
+171 silly installInDir   'nodemon@^1.17.4',
+171 silly installInDir   'discord.js@^11.3.2',
+171 silly installInDir   'rxjs@^6.2.1',
+171 silly installInDir   'rxjs-compat@^6.2.1',
+171 silly installInDir   'uniquid@^1.1.4' ]
+172 silly installInDir backup /home/edu/Code/pp/mielina/packages/adapter-console/package.json
+173 silly rename [ '/home/edu/Code/pp/mielina/packages/adapter-console/package.json',
+173 silly rename   '/home/edu/Code/pp/mielina/packages/adapter-console/package.json.lerna_backup' ]
+174 silly installInDir adapter-discord [ '@babel/cli@^7.0.0-beta.51',
+174 silly installInDir   '@babel/core@^7.0.0-beta.51',
+174 silly installInDir   '@babel/preset-env@^7.0.0-beta.51',
+174 silly installInDir   'nodemon@^1.17.4',
+174 silly installInDir   'discord.js@^11.3.2',
+174 silly installInDir   'rxjs@^6.2.1',
+174 silly installInDir   'rxjs-compat@^6.2.1' ]
+175 silly installInDir backup /home/edu/Code/pp/mielina/packages/adapter-discord/package.json
+176 silly rename [ '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json',
+176 silly rename   '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json.lerna_backup' ]
+177 silly installInDir base-servers [ '@babel/cli@^7.0.0-beta.51',
+177 silly installInDir   '@babel/core@^7.0.0-beta.51',
+177 silly installInDir   '@babel/preset-env@^7.0.0-beta.51',
+177 silly installInDir   'nodemon@^1.17.4',
+177 silly installInDir   'body-parser@^1.18.2',
+177 silly installInDir   'express@^4.16.3',
+177 silly installInDir   'mongoose@^5.1.0',
+177 silly installInDir   'morgan@^1.9.0',
+177 silly installInDir   'socket.io@^2.1.0' ]
+178 silly installInDir backup /home/edu/Code/pp/mielina/packages/base-servers/package.json
+179 silly rename [ '/home/edu/Code/pp/mielina/packages/base-servers/package.json',
+179 silly rename   '/home/edu/Code/pp/mielina/packages/base-servers/package.json.lerna_backup' ]
+180 silly installInDir core [ '@babel/cli@^7.0.0-beta.51',
+180 silly installInDir   '@babel/core@^7.0.0-beta.51',
+180 silly installInDir   '@babel/preset-env@^7.0.0-beta.51',
+180 silly installInDir   'nodemon@^1.17.4',
+180 silly installInDir   'rxjs@^6.2.1',
+180 silly installInDir   'rxjs-compat@^6.2.1' ]
+181 silly installInDir backup /home/edu/Code/pp/mielina/packages/core/package.json
+182 silly rename [ '/home/edu/Code/pp/mielina/packages/core/package.json',
+182 silly rename   '/home/edu/Code/pp/mielina/packages/core/package.json.lerna_backup' ]
+183 silly installInDir writing tempJson { dependencies:
+183 silly installInDir    { '@babel/cli': '^7.0.0-beta.51',
+183 silly installInDir      '@babel/core': '^7.0.0-beta.51',
+183 silly installInDir      '@babel/preset-env': '^7.0.0-beta.51',
+183 silly installInDir      nodemon: '^1.17.4',
+183 silly installInDir      'discord.js': '^11.3.2',
+183 silly installInDir      rxjs: '^6.2.1',
+183 silly installInDir      'rxjs-compat': '^6.2.1',
+183 silly installInDir      uniquid: '^1.1.4' } }
+184 silly installInDir writing tempJson { dependencies:
+184 silly installInDir    { '@babel/cli': '^7.0.0-beta.51',
+184 silly installInDir      '@babel/core': '^7.0.0-beta.51',
+184 silly installInDir      '@babel/preset-env': '^7.0.0-beta.51',
+184 silly installInDir      nodemon: '^1.17.4',
+184 silly installInDir      'discord.js': '^11.3.2',
+184 silly installInDir      rxjs: '^6.2.1',
+184 silly installInDir      'rxjs-compat': '^6.2.1' } }
+185 silly installInDir writing tempJson { dependencies:
+185 silly installInDir    { '@babel/cli': '^7.0.0-beta.51',
+185 silly installInDir      '@babel/core': '^7.0.0-beta.51',
+185 silly installInDir      '@babel/preset-env': '^7.0.0-beta.51',
+185 silly installInDir      nodemon: '^1.17.4',
+185 silly installInDir      'body-parser': '^1.18.2',
+185 silly installInDir      express: '^4.16.3',
+185 silly installInDir      mongoose: '^5.1.0',
+185 silly installInDir      morgan: '^1.9.0',
+185 silly installInDir      'socket.io': '^2.1.0' } }
+186 silly installInDir writing tempJson { dependencies:
+186 silly installInDir    { '@babel/cli': '^7.0.0-beta.51',
+186 silly installInDir      '@babel/core': '^7.0.0-beta.51',
+186 silly installInDir      '@babel/preset-env': '^7.0.0-beta.51',
+186 silly installInDir      nodemon: '^1.17.4',
+186 silly installInDir      rxjs: '^6.2.1',
+186 silly installInDir      'rxjs-compat': '^6.2.1' } }
+187 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/core' }
+188 silly installInDir [ 'npm', [ 'install' ] ]
+189 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/base-servers' }
+190 silly installInDir [ 'npm', [ 'install' ] ]
+191 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/adapter-discord' }
+192 silly installInDir [ 'npm', [ 'install' ] ]
+193 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/adapter-console' }
+194 silly installInDir [ 'npm', [ 'install' ] ]
+195 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/adapter-console/package.json
+196 silly renameSync [ '/home/edu/Code/pp/mielina/packages/adapter-console/package.json.lerna_backup',
+196 silly renameSync   '/home/edu/Code/pp/mielina/packages/adapter-console/package.json' ]
+197 verbose installed leaf @mielina/adapter-console
+198 silly installInDir reference-implementation [ '@babel/cli@^7.0.0-beta.51',
+198 silly installInDir   '@babel/core@^7.0.0-beta.51',
+198 silly installInDir   '@babel/preset-env@^7.0.0-beta.51',
+198 silly installInDir   'dotenv-safe@^6.0.0' ]
+199 silly installInDir backup /home/edu/Code/pp/mielina/packages/reference-implementation/package.json
+200 silly rename [ '/home/edu/Code/pp/mielina/packages/reference-implementation/package.json',
+200 silly rename   '/home/edu/Code/pp/mielina/packages/reference-implementation/package.json.lerna_backup' ]
+201 silly installInDir writing tempJson { dependencies:
+201 silly installInDir    { '@babel/cli': '^7.0.0-beta.51',
+201 silly installInDir      '@babel/core': '^7.0.0-beta.51',
+201 silly installInDir      '@babel/preset-env': '^7.0.0-beta.51',
+201 silly installInDir      'dotenv-safe': '^6.0.0' } }
+202 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/reference-implementation' }
+203 silly installInDir [ 'npm', [ 'install' ] ]
+204 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/core/package.json
+205 silly renameSync [ '/home/edu/Code/pp/mielina/packages/core/package.json.lerna_backup',
+205 silly renameSync   '/home/edu/Code/pp/mielina/packages/core/package.json' ]
+206 verbose installed leaf @mielina/core
+207 silly installInDir memory-short-term [ 'node-cache@^4.2.0' ]
+208 silly installInDir backup /home/edu/Code/pp/mielina/packages/memory-short-term/package.json
+209 silly rename [ '/home/edu/Code/pp/mielina/packages/memory-short-term/package.json',
+209 silly rename   '/home/edu/Code/pp/mielina/packages/memory-short-term/package.json.lerna_backup' ]
+210 silly installInDir writing tempJson { dependencies: { 'node-cache': '^4.2.0' } }
+211 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/adapter-discord/package.json
+212 silly renameSync [ '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json.lerna_backup',
+212 silly renameSync   '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json' ]
+213 verbose installed leaf @mielina/adapter-discord
+214 silly installInDir nlp-apiai [ 'apiai@^4.0.3',
+214 silly installInDir   'request@^2.87.0',
+214 silly installInDir   'request-promise-native@^1.0.5' ]
+215 silly installInDir backup /home/edu/Code/pp/mielina/packages/nlp-apiai/package.json
+216 silly rename [ '/home/edu/Code/pp/mielina/packages/nlp-apiai/package.json',
+216 silly rename   '/home/edu/Code/pp/mielina/packages/nlp-apiai/package.json.lerna_backup' ]
+217 silly installInDir writing tempJson { dependencies:
+217 silly installInDir    { apiai: '^4.0.3',
+217 silly installInDir      request: '^2.87.0',
+217 silly installInDir      'request-promise-native': '^1.0.5' } }
+218 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/memory-short-term' }
+219 silly installInDir [ 'npm', [ 'install' ] ]
+220 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/nlp-apiai' }
+221 silly installInDir [ 'npm', [ 'install' ] ]
+222 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/base-servers/package.json
+223 silly renameSync [ '/home/edu/Code/pp/mielina/packages/base-servers/package.json.lerna_backup',
+223 silly renameSync   '/home/edu/Code/pp/mielina/packages/base-servers/package.json' ]
+224 verbose installed leaf @mielina/base-servers
+225 silly installInDir nlp-luis [ 'apiai@^4.0.3',
+225 silly installInDir   'request@^2.87.0',
+225 silly installInDir   'request-promise-native@^1.0.5' ]
+226 silly installInDir backup /home/edu/Code/pp/mielina/packages/nlp-luis/package.json
+227 silly rename [ '/home/edu/Code/pp/mielina/packages/nlp-luis/package.json',
+227 silly rename   '/home/edu/Code/pp/mielina/packages/nlp-luis/package.json.lerna_backup' ]
+228 silly installInDir writing tempJson { dependencies:
+228 silly installInDir    { apiai: '^4.0.3',
+228 silly installInDir      request: '^2.87.0',
+228 silly installInDir      'request-promise-native': '^1.0.5' } }
+229 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/nlp-luis' }
+230 silly installInDir [ 'npm', [ 'install' ] ]
+231 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/memory-short-term/package.json
+232 silly renameSync [ '/home/edu/Code/pp/mielina/packages/memory-short-term/package.json.lerna_backup',
+232 silly renameSync   '/home/edu/Code/pp/mielina/packages/memory-short-term/package.json' ]
+233 verbose installed leaf @mielina/memory-short-term
+234 silly installInDir nlp-dialogflow [ 'request@^2.87.0',
+234 silly installInDir   'request-promise-native@^1.0.5',
+234 silly installInDir   'dialogflow@^0.6.0' ]
+235 silly installInDir backup /home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json
+236 silly rename [ '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json',
+236 silly rename   '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json.lerna_backup' ]
+237 silly installInDir writing tempJson { dependencies:
+237 silly installInDir    { request: '^2.87.0',
+237 silly installInDir      'request-promise-native': '^1.0.5',
+237 silly installInDir      dialogflow: '^0.6.0' } }
+238 silly getExecOpts { cwd: '/home/edu/Code/pp/mielina/packages/nlp-dialogflow' }
+239 silly installInDir [ 'npm', [ 'install' ] ]
+240 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/nlp-apiai/package.json
+241 silly renameSync [ '/home/edu/Code/pp/mielina/packages/nlp-apiai/package.json.lerna_backup',
+241 silly renameSync   '/home/edu/Code/pp/mielina/packages/nlp-apiai/package.json' ]
+242 verbose installed leaf @mielina/nlp-apiai
+243 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/nlp-luis/package.json
+244 silly renameSync [ '/home/edu/Code/pp/mielina/packages/nlp-luis/package.json.lerna_backup',
+244 silly renameSync   '/home/edu/Code/pp/mielina/packages/nlp-luis/package.json' ]
+245 verbose installed leaf @mielina/nlp-luis
+246 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/reference-implementation/package.json
+247 silly renameSync [ '/home/edu/Code/pp/mielina/packages/reference-implementation/package.json.lerna_backup',
+247 silly renameSync   '/home/edu/Code/pp/mielina/packages/reference-implementation/package.json' ]
+248 verbose installed leaf @mielina/reference-implementation
+249 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json
+250 silly renameSync [ '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json.lerna_backup',
+250 silly renameSync   '/home/edu/Code/pp/mielina/packages/nlp-dialogflow/package.json' ]
+251 verbose installed leaf @mielina/nlp-dialogflow
+252 error execute callback with error
+253 error Error: Command failed: npm install
+253 error npm ERR! code ERR_STREAM_WRITE_AFTER_END
+253 error npm ERR! write after end
+253 error
+253 error npm ERR! A complete log of this run can be found in:
+253 error npm ERR!     /home/edu/.npm/_logs/2018-07-26T01_09_52_925Z-debug.log
+253 error
+253 error     at Promise.all.then.arr (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+253 error     at <anonymous>

@@ -11,6 +11,7 @@ const conversationToContext = require("./conversation");
 // const asyncAttemptSkillHandling = require('./skills');
 const asyncResolveReaction = require("./resolveReaction");
 const asyncResortToNlpResponse = require("./nlpBasedResponse");
+const nlpProviderWrapper = require("./nlpProviderWrapper");
 
 // const discordToken = process.env.DISCORD_BOT_TOKEN;
 // const game = {
@@ -18,7 +19,7 @@ const asyncResortToNlpResponse = require("./nlpBasedResponse");
 //   name: 'with your mind',
 // };
 
-const getMessagePipeline = (servers, nlpProvider) =>
+const getMessagePipeline = (servers, nlpProvider, skills) =>
   pipe(
     filter(i => i.type === "incoming-message"),
 
@@ -27,7 +28,7 @@ const getMessagePipeline = (servers, nlpProvider) =>
     map(conversationToContext),
     map(filterMessages),
     // Go async ...
-    map(nlpProvider),
+    map(nlpProviderWrapper(nlpProvider)),
     //   map(asyncAttemptSkillHandling),
     map(asyncResortToNlpResponse),
     map(asyncResolveReaction),
@@ -42,10 +43,10 @@ const getEventsPipeline = servers =>
     catchError(error => of({ type: "error", error }))
   );
 
-module.exports = async ({ servers, adapters, nlpProvider }) =>
+module.exports = async ({ servers, adapters, nlpProvider, skills }) =>
   adapters.map(({ inputs$, reactions$ }) =>
     merge(
-      inputs$.let(getMessagePipeline(servers, nlpProvider)),
-      inputs$.let(getEventsPipeline(servers))
+      inputs$.let(getMessagePipeline(servers, nlpProvider, skills)),
+      inputs$.let(getEventsPipeline(servers, skills))
     ).subscribe(reactions$)
   );
