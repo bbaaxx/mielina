@@ -1,32 +1,55 @@
 require("dotenv").config();
 
 const runLoop = require("@mielina/core");
-const getConsoleAdapter = require("@mielina/adapter-console");
+
 const getServers = require("@mielina/base-servers");
-const nlpProvider = require("@mielina/nlp-dialogflow");
+const getNlpProvider = require("@mielina/nlp-apiai");
+const getConsoleAdapter = require("@mielina/adapter-console");
 
 /**
  * ### Configuration object ###
  * {
+ *   nlpProvider: [[Configured NLP Provider]],
  *   servers: {
- *     web: [[ExpressJs Running Server Instance]],
- *     sockets: [[SocketIo running server instance (attached to web server)]],
- *     database: [[Mongoose instance already connected]],
+ *     web: [[ExpressJs *Running* Server Instance]],
+ *     sockets: [[SocketIo *Running* server instance (attached to web server)]],
+ *     database: [[Mongoose instance *already connected*]],
+ *     ...
  *   },
  *   adapters: [
- *     [[Messaging Platform Adapters]]
+ *     [[PlatformAdapter]]
  *   ],
- *   skills: [ [[SkillObject]] ]
+ *   skills: {
+ *     impulses: [ [[Skill]] ],
+ *     reactions: [ [[Skill]] ],
+ *   }
  * }
  */
+function makeConfig(servers) {
+  // NLP Provider setup
+  const nlpProviderConfig = {
+    token: process.env.DF_CLIENT_ACCESS_TOKEN
+  };
+  const nlpProvider = getNlpProvider(nlpProviderConfig);
 
-const consoleAdapter = getConsoleAdapter();
+  // Platform Adapters setup
+  const consoleAdapter = getConsoleAdapter();
 
-const getConfig = servers => ({
-  servers,
-  adapters: [consoleAdapter],
-  skills: {},
-  nlpProvider
-});
+  // return the configuration object
+  return {
+    servers,
+    adapters: [
+      consoleAdapter
+    ],
+    skills: {
+      impulses: [],
+      reactions: []
+    },
+    nlpProvider
+  };
+}
 
-getServers().then(servers => runLoop(getConfig(servers)));
+// Run the bot
+getServers()
+  .then(makeConfig)
+  .then(runLoop);
