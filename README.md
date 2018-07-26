@@ -7,8 +7,8 @@ chatbot upon. It runs on NodeJs and features an opinionated set of patterns and
 tools to build a multi-platform chatbot.
 
 It implements abstractions to describe the system in a reasonably intuitive
-way by representing its functions as simulations of those functions performed by
-the human nervous system during a conversation which is to coordinate the bot
+way by representing its functions as simulations of the functions performed by
+the human nervous system during a conversation coordinating the bot
 actions by transmitting signals to the relevant part of the super-system.
 
 ### Right, so... what is a super-system ?
@@ -21,8 +21,12 @@ Mielina is a solution to connect and coordinate all the components in a chatbot
 super-system.
 
 ## How to use it ?
-For now do the basic `npm i && npm start`, and open a code editor while I figure
-out a better way to handle multi package repos. More instructions coming soon...
+Check the `reference-implementation` package for a simple (evolving) example of
+how to get an NLP powered console bot running.
+
+I am currently documenting that code but for now the most confusing part is the
+env variables as they are composed of api access credentials. More docs on this
+coming soon . . .
 
 ## Why?
 Writing a bot with my kids to help them get better at playing LoL I realized
