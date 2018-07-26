@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Edu Mosqueda(@bbaaxx)",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
-    "nodemon": "^1.17.4"
+    "eslint": "^5.2.0"
   },
   "dependencies": {
     "discord.js": "^11.3.2",

@@ -25,8 +25,8 @@ Check the `reference-implementation` package for a simple (evolving) example of
 how to get an NLP powered console bot running.
 
 I am currently documenting that code but for now the most confusing part is the
-env variables as they are composed of api access credentials. More docs on this
-coming soon . . .
+env variables as they are mailny composed of api access credentials. 
+More docs on this coming soon but for now check the `.env.example` file for hints.
 
 ## Why?
 Writing a bot with my kids to help them get better at playing LoL I realized

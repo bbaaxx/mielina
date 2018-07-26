@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Edu Mosqueda(@bbaaxx)",
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.0.0-beta.51",
@@ -17,5 +17,8 @@
     "@mielina/core": "^1.0.0",
     "@mielina/nlp-apiai": "^1.0.0",
     "dotenv-safe": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0"    
   }
 }

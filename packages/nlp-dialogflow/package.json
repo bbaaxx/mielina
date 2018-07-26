@@ -6,11 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Edu Mosqueda(@bbaaxx)",
+  "license": "MIT",
   "dependencies": {
     "dialogflow": "^0.6.0",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0"
   }
 }
