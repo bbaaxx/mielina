@@ -1,25 +1,23 @@
-249 warn complete Waiting for 3 child processes to exit. CTRL-C to exit immediately.
-250 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/adapter-console/package.json
-251 silly renameSync [ '/home/edu/Code/pp/mielina/packages/adapter-console/package.json.lerna_backup',
-251 silly renameSync   '/home/edu/Code/pp/mielina/packages/adapter-console/package.json' ]
-252 verbose installed leaf @mielina/adapter-console
-253 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/adapter-discord/package.json
-254 silly renameSync [ '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json.lerna_backup',
-254 silly renameSync   '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json' ]
-255 verbose installed leaf @mielina/adapter-discord
-256 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/base-servers/package.json
-257 silly renameSync [ '/home/edu/Code/pp/mielina/packages/base-servers/package.json.lerna_backup',
-257 silly renameSync   '/home/edu/Code/pp/mielina/packages/base-servers/package.json' ]
-258 verbose installed leaf @mielina/base-servers
-259 error execute callback with error
-260 error Error: Command failed: npm install
-260 error npm ERR! code ERR_STREAM_WRITE_AFTER_END
-260 error npm ERR! write after end
-260 error npm ERR! code ERR_STREAM_WRITE_AFTER_END
-260 error npm ERR! write after end
-260 error
-260 error npm ERR! A complete log of this run can be found in:
-260 error npm ERR!     /home/edu/.npm/_logs/2018-07-26T02_45_15_077Z-debug.log
-260 error
-260 error     at Promise.all.then.arr (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-260 error     at <anonymous>
+375 warn complete Waiting for 3 child processes to exit. CTRL-C to exit immediately.
+376 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/adapter-discord/package.json
+377 silly renameSync [ '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json.lerna_backup',
+377 silly renameSync   '/home/edu/Code/pp/mielina/packages/adapter-discord/package.json' ]
+378 verbose installed leaf @mielina/adapter-discord
+379 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/base-servers/package.json
+380 silly renameSync [ '/home/edu/Code/pp/mielina/packages/base-servers/package.json.lerna_backup',
+380 silly renameSync   '/home/edu/Code/pp/mielina/packages/base-servers/package.json' ]
+381 verbose installed leaf @mielina/base-servers
+382 silly installInDir cleanup /home/edu/Code/pp/mielina/packages/core/package.json
+383 silly renameSync [ '/home/edu/Code/pp/mielina/packages/core/package.json.lerna_backup',
+383 silly renameSync   '/home/edu/Code/pp/mielina/packages/core/package.json' ]
+384 verbose installed leaf @mielina/core
+385 error execute callback with error
+386 error Error: Command failed: npm install
+386 error npm ERR! code ERR_STREAM_WRITE_AFTER_END
+386 error npm ERR! write after end
+386 error
+386 error npm ERR! A complete log of this run can be found in:
+386 error npm ERR!     /home/edu/.npm/_logs/2018-07-26T03_19_28_582Z-debug.log
+386 error
+386 error     at Promise.all.then.arr (/home/edu/.nvm/versions/node/v9.4.0/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+386 error     at <anonymous>
