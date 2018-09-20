@@ -38,9 +38,7 @@ function makeConfig(servers) {
   // return the configuration object
   return {
     servers,
-    adapters: [
-      consoleAdapter
-    ],
+    adapters: [consoleAdapter],
     skills: {
       impulses: [],
       reactions: []

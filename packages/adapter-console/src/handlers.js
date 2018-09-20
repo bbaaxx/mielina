@@ -1,17 +1,17 @@
-const logPrefix = "Adapter[Console]:";
+const logPrefix = "Adapter[Console]: ";
 
 const wait = t => new Promise(r => setTimeout(r, t));
 
-const clientOut = client => (msg, logType = "log") => {
+const replyAndPrompt = client => (msg, logType = "log") => {
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
-  console[logType].apply(null, msg.map(m => `${logPrefix} ${m}`));
+  console[logType].apply(null, msg.map(m => `${logPrefix}${m}`));
   client.prompt(true);
 };
 
 const platformActions = {
   "default-action"(client, reaction) {
-    clientOut(client)(
+    replyAndPrompt(client)(
       [`I don't know what to do with reaction type: ${reaction.type}`],
       "warn"
     );
@@ -20,19 +20,19 @@ const platformActions = {
     return;
   },
   error(client, reaction) {
-    clientOut(client, "error")(["errored Reaction", reaction]);
-    clientOut(client)([`I have an error: ${reaction.error}`]);
+    replyAndPrompt(client)(["errored Reaction", reaction], "error");
+    replyAndPrompt(client)([`I have an error: ${reaction.error}`]);
   },
   "message-reply"(client, reaction) {
     const { message } = reaction;
-    clientOut(client)([message.content]);
+    replyAndPrompt(client)([message.content]);
   },
   // 'set-presence'(client, reaction) {
   //   const { presence } = reaction;
   //   client.user.setPresence(presence);
   // },
   "adapter-ready"(client) {
-    clientOut(client)([`logged in as OP Root User`]);
+    replyAndPrompt(client)([`logged in as OP Root User`]);
   }
 };
 

@@ -14,18 +14,14 @@ const commands$ = new Subject();
 const reactions$ = new Subject();
 
 const platformMessages$ = fromEvent(client, "line").map(platformMessage);
-
 const messageLoop$ = zip(platformMessages$, reactions$, (input, reaction) => ({
   ...reaction,
   input
 }));
 
-const platformSubscription = merge(messageLoop$, commands$).subscribe(
-  actionHandler(client)
-);
-
 module.exports = () => ({
   inputs$: platformMessages$.map(publishMessage),
   reactions$,
-  commands$
+  commands$,
+  subscription: merge(messageLoop$, commands$).subscribe(actionHandler(client))
 });

@@ -3,8 +3,8 @@ const sinon = require("sinon");
 const sinonChai = require("sinon-chai");
 const botLoop = require("../src");
 
-const getMockIoAdapter = require("./mockIoAdapter");
-const getMockNlpProvider = require("./mockNlpProvider");
+const mockIoAdapter = require("./mockIoAdapter")();
+const mockNlpProvider = require("./mockNlpProvider")();
 
 const { expect } = chai;
 chai.use(sinonChai);
@@ -37,8 +37,8 @@ const buildConfig = (overrides = {}) => ({
     database: {},
     sockets: {}
   },
-  adapters: [getMockIoAdapter()],
-  nlpProvider: getMockNlpProvider(),
+  adapters: [mockIoAdapter],
+  nlpProvider: mockNlpProvider,
   skills: {
     impulses: [],
     reactions: []
@@ -47,10 +47,9 @@ const buildConfig = (overrides = {}) => ({
 });
 
 describe("botLoop test", function() {
-
   it("should test botLoop", function(done) {
     const mockMessage = "Test string !!!";
-    const mockIoAdapter = getMockIoAdapter(output => {
+    const mockIoAdapter = require("./mockIoAdapter")(output => {
       expect(output.input.message).to.eq(mockMessage);
       expect(output.input.type).to.eq("platform-message");
       done();
@@ -61,5 +60,4 @@ describe("botLoop test", function() {
     botLoop(mockConfig);
     pushMessage(mockMessage);
   });
-
 });

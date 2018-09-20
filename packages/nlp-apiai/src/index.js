@@ -3,7 +3,7 @@ const marshallResponse = require("./marshallResponse");
 
 /**
  * Configures an agent and returns a provider middleware
- * @param { token: String } config 
+ * @param { token: String } config
  */
 module.exports = function(config) {
   const { token } = config;

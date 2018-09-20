@@ -1,7 +1,6 @@
 const { Subject } = require("rxjs/Rx");
 const { zip } = require("rxjs/observable/zip");
 const { merge } = require("rxjs/observable/merge");
-const { of } = require("rxjs/observable/of");
 
 const marshallMessage = message => ({
   msgId: "TESTID123",
