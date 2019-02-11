@@ -1,7 +1,7 @@
 const chai = require("chai");
 const sinonChai = require("sinon-chai");
 
-const botLoop = require("../src");
+const botLoop = require("../src/botLoop");
 
 const getMockIoAdapter = require("./mocks/mockIoAdapter");
 const getMockNlpProvider = require("./mocks/mockNlpProvider");
