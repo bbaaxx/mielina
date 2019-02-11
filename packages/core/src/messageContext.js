@@ -2,7 +2,6 @@ module.exports = servers => input => {
   const { message } = input;
   const { web, sockets, database } = servers;
   const ctxMap = new Map(); // eslint-disable-line
-
   ctxMap.set("resolved", false);
   ctxMap.set("startedAt", new Date());
   ctxMap.set("message", message);
@@ -20,7 +19,6 @@ module.exports = servers => input => {
     getMessage: () => ctxMap.get("message"),
     getMessageContent: () => ctxMap.get("message").content,
     getAuthorId: () => ctxMap.get("message").authorId,
-    getAuthorName: () => ctxMap.get("message").authorName,
     getReaction: () => ctxMap.get("reaction"),
 
     // resolve

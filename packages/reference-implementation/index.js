@@ -50,4 +50,5 @@ function makeConfig(servers) {
 // Run the bot
 getServers()
   .then(makeConfig)
-  .then(runLoop);
+  .then(runLoop)
+  .catch(e => console.error(e));
