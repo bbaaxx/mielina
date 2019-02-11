@@ -39,10 +39,12 @@ module.exports = function() {
 
       botLoop(
         buildConfig({
-          nlpProvider: getMockNlpProvider({
-            nlpFulfilled: true,
-            fulfillment: mockResponse
-          })
+          providers: {
+            nlp: getMockNlpProvider({
+              nlpFulfilled: true,
+              fulfillment: mockResponse
+            })
+          }
         })
       ).map(({ adapter: { pushMessage, reactions$ } }) => {
         reactions$.subscribe({
@@ -51,15 +53,17 @@ module.exports = function() {
         pushMessage("");
       });
     });
+
     it("should fail gracefully and report the error on input", function(done) {
-      const mockResponse = "Test response !!!";
       const testReaction = reaction => {
         expect(reaction.type).to.eq("error");
         done();
       };
       botLoop(
         buildConfig({
-          nlpProvider: () => Promise.reject(new Error("mock error"))
+          providers: {
+            nlp: () => Promise.reject(new Error("mock error"))
+          }
         })
       ).map(({ adapter: { pushMessage, reactions$ } }) => {
         reactions$.subscribe({
@@ -68,6 +72,7 @@ module.exports = function() {
         pushMessage("");
       });
     });
+
     it("should fail gracefully and report the error on events");
   });
 };

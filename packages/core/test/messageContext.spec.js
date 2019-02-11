@@ -4,26 +4,18 @@ const sinonChai = require("sinon-chai");
 const { expect } = chai;
 chai.use(sinonChai);
 
-const makeContextCreator = require("../src/messageContext");
+const createContext = require("../src/messageContext");
 const getTestMsg = require("./helpers/makeMessageObj");
 
 module.exports = function() {
-  describe("makeContextCreator function", function() {
+  describe("createContext function", function() {
     it("should return a function when called", function() {
-      expect(makeContextCreator()).to.be.a("function");
+      expect(createContext).to.be.a("function");
     });
   });
 
   describe("context creator and context accessor", function() {
-    let createContext;
     let ctx;
-    before(() => {
-      createContext = makeContextCreator({
-        web: {},
-        sockets: {},
-        database: {}
-      });
-    });
     beforeEach(() => {
       ctx = createContext(getTestMsg());
     });
@@ -52,14 +44,6 @@ module.exports = function() {
 
   describe("context object", function() {
     const mockMessage = "mock message";
-    let createContext;
-    before(() => {
-      createContext = makeContextCreator({
-        web: {},
-        sockets: {},
-        database: {}
-      });
-    });
     it("should be able to get properties from the context", function() {
       const testMsg = getTestMsg(mockMessage);
       const ctx = createContext(testMsg);

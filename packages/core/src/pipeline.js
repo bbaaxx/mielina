@@ -1,26 +1,26 @@
 const { pipe } = require("rxjs/Rx");
 const { of } = require("rxjs/observable/of");
-const { filter, map, mergeAll, catchError } = require("rxjs/operators");
+const { map, mergeAll, catchError } = require("rxjs/operators");
 
+/** Sync Stuff */
 const getContextCreator = require("./messageContext");
 const attemptToTrigerImpulse = require("./impulses");
 const filterMessages = require("./filterMessages");
 const conversationToContext = require("./conversation");
-// Async Stuff
+
+/** Async Stuff */
 // const asyncAttemptSkillHandling = require('./skills');
 const asyncResolveReaction = require("./resolveReaction");
-const asyncResortToNlpResponse = require("./nlpBasedResponse");
 const nlpProviderWrapper = require("./nlpProviderWrapper");
+const asyncResortToNlpResponse = require("./nlpBasedResponse");
 
-module.exports.getMessagesPipeline = (servers, nlpProvider, skills) =>
+module.exports = (nlpProvider, skills) =>
   pipe(
-    filter(i => i.type === "incoming-message"),
-
-    map(getContextCreator(servers)),
+    map(getContextCreator),
     map(attemptToTrigerImpulse),
     map(conversationToContext),
     map(filterMessages),
-    // Go async ...
+    /** Go async */
     map(nlpProviderWrapper(nlpProvider)),
     //   map(asyncAttemptSkillHandling),
     map(asyncResortToNlpResponse),
@@ -28,10 +28,4 @@ module.exports.getMessagesPipeline = (servers, nlpProvider, skills) =>
     // ... then flatten
     mergeAll(),
     catchError(error => of({ type: "error", error }))
-  );
-
-module.exports.getEventsPipeline = servers =>
-  pipe(
-    filter(i => i.type !== "incoming-message")
-    // catchError(error => of({ type: "error", error }))
   );

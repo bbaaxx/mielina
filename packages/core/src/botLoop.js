@@ -1,16 +1,13 @@
-const { merge } = require("rxjs/observable/merge");
-const { getMessagesPipeline, getEventsPipeline } = require("./pipelines");
+const getPipeline = require("./pipeline");
 
 module.exports = function(config) {
-  const { servers, adapters, nlpProvider, skills } = config;
-  const messagesPipeline = getMessagesPipeline(servers, nlpProvider, skills);
-  const eventsPipeline = getEventsPipeline(servers, skills);
+  const { adapters, providers, impulses, skills, servers } = config;
+  const messagesPipeline = getPipeline(providers.nlp, impulses, skills);
 
   return adapters.map(adapter => ({
     adapter,
-    subscriptions: merge(
-      adapter.inputs$.let(messagesPipeline),
-      adapter.inputs$.let(eventsPipeline)
-    ).subscribe(adapter.reactions$)
+    subscription: adapter.inputs$
+      .let(messagesPipeline)
+      .subscribe(adapter.reactions$)
   }));
 };

@@ -9,20 +9,16 @@ const getConsoleAdapter = require("@mielina/adapter-console");
 /**
  * ### Configuration object ###
  * {
- *   nlpProvider: [[Configured NLP Provider]],
+ *   providers: { nlp: [[Configured NLP Provider]] },
  *   servers: {
  *     web: [[ExpressJs *Running* Server Instance]],
  *     sockets: [[SocketIo *Running* server instance (attached to web server)]],
  *     database: [[Mongoose instance *already connected*]],
  *     ...
  *   },
- *   adapters: [
- *     [[PlatformAdapter]]
- *   ],
- *   skills: {
- *     impulses: [ [[Skill]] ],
- *     reactions: [ [[Skill]] ],
- *   }
+ *   adapters: [ [[PlatformAdapter]] ],
+ *   impulses: [ [[Impulse]] ], // Sync
+ *   skills: [ [[Skill]] ], // Async
  * }
  */
 function makeConfig(servers) {
@@ -39,11 +35,9 @@ function makeConfig(servers) {
   return {
     servers,
     adapters: [consoleAdapter],
-    skills: {
-      impulses: [],
-      reactions: []
-    },
-    nlpProvider
+    providers: { nlp: nlpProvider },
+    impulses: [],
+    skills: []
   };
 }
 
