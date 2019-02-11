@@ -9,11 +9,7 @@ module.exports = function(ctx) {
     String(ctx.getMessageContent()).toLowerCase()
   );
 
-  const shouldAttend = iWasMentioned || activeConversation;
-
-  if (shouldAttend) {
-  }
-  const type = shouldAttend ? "process-message" : "ignore";
+  const type = iWasMentioned || activeConversation ? "process" : "ignore";
 
   return { ...ctx, type };
 };

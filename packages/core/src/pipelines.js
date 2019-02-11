@@ -32,6 +32,6 @@ module.exports.getMessagesPipeline = (servers, nlpProvider, skills) =>
 
 module.exports.getEventsPipeline = servers =>
   pipe(
-    filter(i => i.type !== "incoming-message"),
-    catchError(error => of({ type: "error", error }))
+    filter(i => i.type !== "incoming-message")
+    // catchError(error => of({ type: "error", error }))
   );

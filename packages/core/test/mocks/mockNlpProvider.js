@@ -1,14 +1,14 @@
 module.exports = (echoObj = {}) => () =>
   Promise.resolve(
     Object.assign(
-      {},
       {
         type: "nlp-response",
-        lang: "test-lang",
-        action: "test.action",
-        parameters: ["test", "params"],
+        lang: "mock-lang",
+        action: "mock.action",
+        parameters: ["mock", "params"],
         nlpFulfilled: false,
-        query: "test query"
+        query: "mock query",
+        fulfillment: "mock response"
       },
       echoObj
     )

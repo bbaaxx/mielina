@@ -6,10 +6,11 @@ module.exports = function(config) {
   const messagesPipeline = getMessagesPipeline(servers, nlpProvider, skills);
   const eventsPipeline = getEventsPipeline(servers, skills);
 
-  return adapters.map(({ inputs$, reactions$ }) =>
-    merge(
-      inputs$.let(messagesPipeline),
-      inputs$.let(eventsPipeline)
-    ).subscribe(reactions$)
-  );
+  return adapters.map(adapter => ({
+    adapter,
+    subscriptions: merge(
+      adapter.inputs$.let(messagesPipeline),
+      adapter.inputs$.let(eventsPipeline)
+    ).subscribe(adapter.reactions$)
+  }));
 };

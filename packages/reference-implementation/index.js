@@ -38,9 +38,7 @@ function makeConfig(servers) {
   // return the configuration object
   return {
     servers,
-    adapters: [
-      consoleAdapter
-    ],
+    adapters: [consoleAdapter],
     skills: {
       impulses: [],
       reactions: []
@@ -52,4 +50,5 @@ function makeConfig(servers) {
 // Run the bot
 getServers()
   .then(makeConfig)
-  .then(runLoop);
+  .then(runLoop)
+  .catch(e => console.error(e));
