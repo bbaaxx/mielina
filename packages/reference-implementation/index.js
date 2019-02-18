@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv-safe").config();
 
 const runLoop = require("@mielina/core");
 

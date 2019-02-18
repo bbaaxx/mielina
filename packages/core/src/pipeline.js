@@ -9,7 +9,6 @@ const filterMessages = require("./filterMessages");
 const conversationToContext = require("./conversation");
 
 /** Async Stuff */
-// const asyncAttemptSkillHandling = require('./skills');
 const asyncResolveReaction = require("./resolveReaction");
 const nlpProviderWrapper = require("./nlpProviderWrapper");
 const asyncResortToNlpResponse = require("./nlpBasedResponse");
@@ -22,7 +21,9 @@ module.exports = (nlpProvider, skills) =>
     map(filterMessages),
     /** Go async */
     map(nlpProviderWrapper(nlpProvider)),
-    //   map(asyncAttemptSkillHandling),
+
+    // ....... Handle skills here .......
+
     map(asyncResortToNlpResponse),
     map(asyncResolveReaction),
     // ... then flatten

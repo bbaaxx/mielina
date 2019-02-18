@@ -11,19 +11,20 @@
   "dependencies": {
     "@mielina/memory-short-term": "^1.0.0",
     "immutable": "^4.0.0-rc.12",
-    "rxjs": "^6.2.1",
-    "rxjs-compat": "^6.2.1"
+    "rxjs": "^6.4.0",
+    "rxjs-compat": "^6.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.51",
-    "@babel/core": "^7.0.0-beta.51",
-    "@babel/preset-env": "^7.0.0-beta.51",
-    "chai": "^4.1.2",
-    "eslint": "^5.2.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.14.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "nodemon": "^1.17.4",
-    "sinon": "^6.1.4",
-    "sinon-chai": "^3.2.0"
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0"
   }
 }
