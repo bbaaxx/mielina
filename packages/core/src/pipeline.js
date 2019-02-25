@@ -3,27 +3,32 @@ const { of } = require("rxjs/observable/of");
 const { map, mergeAll, catchError } = require("rxjs/operators");
 
 /** Sync Stuff */
-const getContextCreator = require("./messageContext");
-const attemptToTrigerImpulse = require("./impulses");
+const createContext = require("./messageContext");
 const filterMessages = require("./filterMessages");
-const conversationToContext = require("./conversation");
+
+// WIP {
+const dispatchImpulses = require("./impulsesDispatcher");
+// }
 
 /** Async Stuff */
 const asyncResolveReaction = require("./resolveReaction");
 const nlpProviderWrapper = require("./nlpProviderWrapper");
 const asyncResortToNlpResponse = require("./nlpBasedResponse");
 
+// WIP {
+const dispatchSkills = require("./skillsDispatcher");
+// }
+
 module.exports = (nlpProvider, skills) =>
   pipe(
-    map(getContextCreator),
-    map(attemptToTrigerImpulse),
-    map(conversationToContext),
+    map(createContext),
+    map(dispatchImpulses),
     map(filterMessages),
     /** Go async */
     map(nlpProviderWrapper(nlpProvider)),
 
     // ....... Handle skills here .......
-
+    map(dispatchSkills),
     map(asyncResortToNlpResponse),
     map(asyncResolveReaction),
     // ... then flatten

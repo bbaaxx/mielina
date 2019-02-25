@@ -1,7 +1,7 @@
 const getPipeline = require("./pipeline");
 
 module.exports = function(config) {
-  const { adapters, providers, impulses, skills, servers } = config;
+  const { adapters, providers, impulses, skills } = config;
   const messagesPipeline = getPipeline(providers.nlp, impulses, skills);
 
   return adapters.map(adapter => ({
