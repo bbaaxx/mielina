@@ -4,7 +4,6 @@ const { map, mergeAll, catchError } = require("rxjs/operators");
 
 /** Sync Stuff */
 const createContext = require("./messageContext");
-const filterMessages = require("./filterMessages");
 
 // WIP {
 const dispatchImpulses = require("./impulsesDispatcher");
@@ -23,7 +22,6 @@ module.exports = (nlpProvider, skills) =>
   pipe(
     map(createContext),
     map(dispatchImpulses),
-    map(filterMessages),
     /** Go async */
     map(nlpProviderWrapper(nlpProvider)),
 
