@@ -21,15 +21,19 @@ const dispatchSkills = require("./skillsDispatcher");
 module.exports = (nlpProvider, skills) =>
   pipe(
     map(createContext),
+
+    // ....... Handle impulses here .......
     map(dispatchImpulses),
     /** Go async */
     map(nlpProviderWrapper(nlpProvider)),
 
     // ....... Handle skills here .......
     map(dispatchSkills),
+
     map(asyncResortToNlpResponse),
     map(asyncResolveReaction),
-    // ... then flatten
+
+    // ... then flatten async
     mergeAll(),
     catchError(error => of({ type: "error", error }))
   );
