@@ -1,1 +1,1 @@
-module.exports = require("./src/botLoop");
+module.exports = require("./src/loop");

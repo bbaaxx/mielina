@@ -1,8 +1,7 @@
-const I = require("immutable");
-const { of } = require("rxjs");
+const { Map } = require("immutable");
 
 module.exports = ({ message }) =>
-  I.Map({
+  Map({
     message,
     resolved: false,
     startedAt: new Date()

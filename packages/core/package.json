@@ -9,10 +9,10 @@
   "author": "Edu Mosqueda(@bbaaxx)",
   "license": "MIT",
   "dependencies": {
-    "@mielina/memory-short-term": "^1.0.0",
     "immutable": "^4.0.0-rc.12",
     "rxjs": "^6.4.0",
-    "rxjs-compat": "^6.4.0"
+    "rxjs-compat": "^6.4.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

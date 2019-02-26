@@ -4,7 +4,7 @@ const sinonChai = require("sinon-chai");
 const { expect } = chai;
 chai.use(sinonChai);
 
-const createContext = require("../src/messageContext");
+const createContext = require("../src/context");
 const getTestMsg = require("./helpers/makeMessageObj");
 
 module.exports = function() {

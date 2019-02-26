@@ -1,7 +1,7 @@
 const chai = require("chai");
 const sinonChai = require("sinon-chai");
 
-const botLoop = require("../src/botLoop");
+const botLoop = require("../src/loop");
 
 const getMockIoAdapter = require("./mocks/mockIoAdapter");
 const getMockNlpProvider = require("./mocks/mockNlpProvider");
@@ -72,7 +72,5 @@ module.exports = function() {
         pushMessage("");
       });
     });
-
-    it("should fail gracefully and report the error on events");
   });
 };
