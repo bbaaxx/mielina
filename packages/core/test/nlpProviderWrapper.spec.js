@@ -16,8 +16,7 @@ module.exports = function() {
 
   describe("nlpBasedResponse functionality", function() {
     it("should not do anything if context is resolved", function(done) {
-      const ctx = getCtx("lorem ipsum");
-      ctx.set("resolved", true);
+      const ctx = getCtx("lorem ipsum").set("resolved", true);
       nlpProviderWrapper({})(ctx).then(function(newCtx) {
         expect(newCtx).to.eq(ctx);
         expect(newCtx.get("nlp")).to.not.exist;

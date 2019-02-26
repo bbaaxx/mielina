@@ -5,12 +5,12 @@ const basicTextReply = text => ({
 
 module.exports = async _ctx => {
   const ctx = await _ctx;
-  if (ctx.resolved()) return ctx;
-
+  if (ctx.get("resolved")) return ctx;
   const nlp = ctx.get("nlp");
   if (typeof nlp !== "object" || !nlp.nlpFulfilled) {
     return ctx;
   }
-  ctx.resolve(basicTextReply(nlp.fulfillment));
-  return ctx;
+  return ctx
+    .set("resolved", true)
+    .set("reaction", basicTextReply(nlp.fulfillment));
 };

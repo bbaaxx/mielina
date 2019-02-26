@@ -1,7 +1,6 @@
 module.exports = async _ctx => {
   const ctx = await _ctx;
-  if (ctx.resolved()) return ctx.getReaction();
+  if (ctx.get("resolved")) return ctx.get("reaction");
   console.warn("WARN >>> no middleware resolved the request");
-  const { reaction } = ctx;
-  return reaction;
+  return ctx.get("reaction");
 };

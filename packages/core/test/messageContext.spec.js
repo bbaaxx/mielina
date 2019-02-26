@@ -29,17 +29,6 @@ module.exports = function() {
       expect(ctx.set).to.be.a("function");
       expect(ctx.get).to.be.a("function");
     });
-    it("should provide a resolve and resolved methods", function() {
-      expect(ctx.resolve).to.be.a("function");
-      expect(ctx.resolved).to.be.a("function");
-    });
-    it("should provide sugar getter methods", function() {
-      expect(ctx.getMessage).to.be.a("function");
-      expect(ctx.getMessageContent).to.be.a("function");
-      expect(ctx.getAuthorId).to.be.a("function");
-      // expect(ctx.getAuthorName).to.be.a("function");
-      expect(ctx.getReaction).to.be.a("function");
-    });
   });
 
   describe("context object", function() {
@@ -49,12 +38,6 @@ module.exports = function() {
       const ctx = createContext(testMsg);
       expect(ctx.get("message")).to.eq(testMsg.message);
       expect(ctx.get("resolved")).to.eq(false);
-    });
-    it("should be able to indirectly set properties", function() {
-      const ctx = createContext(getTestMsg());
-      expect(ctx.get("resolved")).to.eq(false);
-      ctx.set("resolved", true);
-      expect(ctx.get("resolved")).to.eq(true);
     });
     it("should timestamp itself", function() {
       const timeBefore = new Date();

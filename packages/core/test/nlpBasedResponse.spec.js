@@ -17,33 +17,27 @@ module.exports = function() {
   describe("nlpBasedResponse functionality", function() {
     it("should not modify context if an NLP response is not provided", function(done) {
       const ctx = getCtx("lorem ipsum");
-      nlpBasedResponse(ctx).then(function(newCtx) {
-        expect(newCtx).to.eq(ctx);
-        done();
-      });
+      nlpBasedResponse(ctx)
+        .then(function(newCtx) {
+          expect(newCtx).to.eq(ctx);
+          done();
+        })
+        .catch(done);
     });
-    it("should not modify context if an NLP response is not fulfilled", function(done) {
-      const ctx = getCtx("lorem ipsum");
+    it("should not do anything if context is resolved", function(done) {
+      const ctx = getCtx("lorem ipsum").set("resolved", true);
       nlpBasedResponse(ctx).then(function(newCtx) {
         expect(newCtx).to.eq(ctx);
+        expect(newCtx.get("resolved")).to.eq(true);
+        expect(newCtx.get("reaction")).to.not.exist;
         done();
       });
     });
     it("should resolve the context if an NLP provider fulfills the request", function(done) {
-      const ctx = getCtx("lorem ipsum");
-      ctx.set("nlp", { nlpFulfilled: true });
-      expect(ctx.resolved()).to.eq(false);
+      const ctx = getCtx("lorem ipsum").set("nlp", { nlpFulfilled: true });
+      expect(ctx.get("resolved")).to.eq(false);
       nlpBasedResponse(ctx).then(function(newCtx) {
-        expect(newCtx.resolved()).to.eq(true);
-        done();
-      });
-    });
-    it("should not do anything if context is resolved", function(done) {
-      const ctx = getCtx("lorem ipsum");
-      ctx.set("resolved", true);
-      nlpBasedResponse(ctx).then(function(newCtx) {
-        expect(newCtx).to.eq(ctx);
-        expect(newCtx.get("reaction")).to.not.exist;
+        expect(newCtx.get("resolved")).to.eq(true);
         done();
       });
     });
