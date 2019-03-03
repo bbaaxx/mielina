@@ -1,5 +1,5 @@
 {
-  "name": "@mielina/reference-implementation",
+  "name": "mielina-basic-console-nlp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,10 +12,10 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "@mielina/adapter-console": "^1.0.0",
-    "@mielina/base-servers": "^1.0.0",
-    "@mielina/core": "^1.0.0",
-    "@mielina/nlp-apiai": "^1.0.0",
+    "@mielina/adapter-console": "../../packages/adapter-console",
+    "@mielina/base-servers": "../../packages/base-servers",
+    "@mielina/core": "../../packages/core",
+    "@mielina/nlp-apiai": "../../packages/nlp-apiai",
     "dotenv-safe": "^6.1.0"
   },
   "devDependencies": {
