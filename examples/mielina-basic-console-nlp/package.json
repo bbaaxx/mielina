@@ -9,21 +9,10 @@
   "author": "Edu Mosqueda(@bbaaxx)",
   "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
     "@mielina/adapter-console": "../../packages/adapter-console",
     "@mielina/base-servers": "../../packages/base-servers",
     "@mielina/core": "../../packages/core",
     "@mielina/nlp-apiai": "../../packages/nlp-apiai",
     "dotenv-safe": "^6.1.0"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "eslint": "^5.13.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "sinon": "^7.2.3",
-    "sinon-chai": "^3.3.0"
   }
 }
