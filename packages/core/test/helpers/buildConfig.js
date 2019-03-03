@@ -8,10 +8,8 @@ module.exports = (overrides = {}) => ({
     sockets: {}
   },
   adapters: [getMockIoAdapter()],
-  nlpProvider: getMockNlpProvider(),
-  skills: {
-    impulses: [],
-    reactions: []
-  },
+  providers: { nlp: getMockNlpProvider() },
+  impulses: [],
+  skills: [],
   ...overrides
 });

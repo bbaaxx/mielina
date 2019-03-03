@@ -1,9 +1,6 @@
-module.exports = nlpProvider => async function(ctx) {
-  if (ctx.resolved()) return ctx;
-  const nlp = await nlpProvider(
-    ctx.getMessageContent(),
-    { sessionId: ctx.getAuthorId() }
-  );
-  ctx.set("nlp", nlp);
-  return ctx;
-};
+module.exports = nlpProvider =>
+  async function(ctx) {
+    if (ctx.get("resolved")) return ctx;
+    const { content, authorId } = ctx.get("message");
+    return ctx.set("nlp", await nlpProvider(content, { sessionId: authorId }));
+  };

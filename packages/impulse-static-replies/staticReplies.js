@@ -1,10 +1,6 @@
 // Esta funcion convierte nuestro texto en un objeto con nuestra respuesta y otros
 // datos utiles
-const {
-  basicTextReply,
-  basicEmbedReply,
-  randomBasicFromArray
-} = require("../actions");
+const { basicTextReply, randomBasicFromArray } = require("./actions");
 
 const replyStock = require("./data/replyDb.json");
 const embed = require("./data/embedBase.json");

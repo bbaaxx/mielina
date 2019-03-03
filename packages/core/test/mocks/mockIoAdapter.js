@@ -37,11 +37,6 @@ module.exports = function(handler = () => void 0) {
       incoming$.next({
         type: "incoming-message",
         message
-      }),
-    pushEvent: event =>
-      incoming$.next({
-        type: "incoming-event",
-        event
       })
   };
 };

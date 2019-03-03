@@ -4,26 +4,18 @@ const sinonChai = require("sinon-chai");
 const { expect } = chai;
 chai.use(sinonChai);
 
-const makeContextCreator = require("../src/messageContext");
+const createContext = require("../src/context");
 const getTestMsg = require("./helpers/makeMessageObj");
 
 module.exports = function() {
-  describe("makeContextCreator function", function() {
+  describe("createContext function", function() {
     it("should return a function when called", function() {
-      expect(makeContextCreator()).to.be.a("function");
+      expect(createContext).to.be.a("function");
     });
   });
 
   describe("context creator and context accessor", function() {
-    let createContext;
     let ctx;
-    before(() => {
-      createContext = makeContextCreator({
-        web: {},
-        sockets: {},
-        database: {}
-      });
-    });
     beforeEach(() => {
       ctx = createContext(getTestMsg());
     });
@@ -37,40 +29,15 @@ module.exports = function() {
       expect(ctx.set).to.be.a("function");
       expect(ctx.get).to.be.a("function");
     });
-    it("should provide a resolve and resolved methods", function() {
-      expect(ctx.resolve).to.be.a("function");
-      expect(ctx.resolved).to.be.a("function");
-    });
-    it("should provide sugar getter methods", function() {
-      expect(ctx.getMessage).to.be.a("function");
-      expect(ctx.getMessageContent).to.be.a("function");
-      expect(ctx.getAuthorId).to.be.a("function");
-      // expect(ctx.getAuthorName).to.be.a("function");
-      expect(ctx.getReaction).to.be.a("function");
-    });
   });
 
   describe("context object", function() {
     const mockMessage = "mock message";
-    let createContext;
-    before(() => {
-      createContext = makeContextCreator({
-        web: {},
-        sockets: {},
-        database: {}
-      });
-    });
     it("should be able to get properties from the context", function() {
       const testMsg = getTestMsg(mockMessage);
       const ctx = createContext(testMsg);
       expect(ctx.get("message")).to.eq(testMsg.message);
       expect(ctx.get("resolved")).to.eq(false);
-    });
-    it("should be able to indirectly set properties", function() {
-      const ctx = createContext(getTestMsg());
-      expect(ctx.get("resolved")).to.eq(false);
-      ctx.set("resolved", true);
-      expect(ctx.get("resolved")).to.eq(true);
     });
     it("should timestamp itself", function() {
       const timeBefore = new Date();

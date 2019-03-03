@@ -1,5 +1,5 @@
 {
-  "name": "@mielina/adapter-console",
+  "name": "mielina-basic-console-nlp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,23 +8,22 @@
   },
   "author": "Edu Mosqueda(@bbaaxx)",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "@mielina/adapter-console": "../../packages/adapter-console",
+    "@mielina/base-servers": "../../packages/base-servers",
+    "@mielina/core": "../../packages/core",
+    "@mielina/nlp-apiai": "../../packages/nlp-apiai",
+    "dotenv-safe": "^6.1.0"
+  },
+  "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^5.13.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "sinon": "^7.2.3",
-    "sinon-chai": "^3.3.0",
-    "winston": "^3.2.1"
-  },
-  "dependencies": {
-    "@mielina/base-servers": "^1.0.0",
-    "discord.js": "^11.4.2",
-    "rxjs": "^6.4.0",
-    "rxjs-compat": "^6.4.0",
-    "uniquid": "^1.1.4"
+    "sinon-chai": "^3.3.0"
   }
 }

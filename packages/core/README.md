@@ -1,24 +1,16 @@
 # Configuration object example
 
-    /* A bare-bones configuration object:
+## Configuration object
+
     {
-      servers: { // these can be acquired from the @mielina/base-servers package
-        web: <express application instance>,
-        database: <mongodb db instance>,
-        sockets: <socket.io instance (Attached to webserver)>
+      adapters: [ [[PlatformAdapter]] ],
+      providers: { nlp: [[Configured NLP Provider]] },
+      servers: {
+        web: [[ExpressJs *Running* Server Instance]],
+        sockets: [[SocketIo *Running* server instance (attached to web server)]],
+        database: [[Mongoose instance *already connected*]],
+        ...
       },
-      adapters: [ { inputs$: Observable, commands$: Subject, reactions$: Subject } ],
-      nlpProvider: () => Promise<{
-        type: String,
-        lang: String,
-        action: String,
-        parameters: [{ [paramName]: String }],
-        nlpFulfilled: Boolean,
-        query: String
-      }>,
-      skills: {
-        impulses: [A (Context) => Context],
-        reactions: [A (Context) => Promise<Context>]
-      }
+      impulses: [ [[Impulse]] ], // Sync
+      skills: [ [[Skill]] ], // Async
     }
-    */
